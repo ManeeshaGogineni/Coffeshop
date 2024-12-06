@@ -1,0 +1,445 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8e1; /* Warm chai-inspired background */
+    color: #5a381f; /* Deep chai-brown color for text */
+}
+
+/* Header Styles */
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+header nav a:hover {
+    color: #f5deb3;
+}
+
+header {
+    background-color: #9c6615; /* Rich coffee-inspired brown */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-family: 'Cursive', sans-serif;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Navigation Tabs */
+nav {
+    background-color: #9c6615; /* Rich coffee brown */
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f5deb3; /* Light wheat color for hover effect */
+    color: #9c6615; /* Rich brown text for contrast */
+}
+
+.menu-tab {
+    background-color: #fff8e1;
+    color: #5a381f;
+    border: 2px solid #9c6615;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-tab:hover {
+    background-color: #9c6615;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Menu Section */
+#menu-section {
+    padding: 20px;
+    text-align: center;
+}
+
+#menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: #fff5e6; /* Light cream */
+    border: 2px solid #9c6615;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 2px solid #9c6615;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-family: 'Cursive', sans-serif;
+    color: #5a381f;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #7d5732;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #9c6615;
+    margin-top: 5px;
+}
+
+.menu-item button {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #5a381f;
+}
+
+/* Cart Section */
+#cart-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5deb3;
+    border: 2px solid #9c6615;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#cart-container {
+    margin-top: 10px;
+    color: #5a381f;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item .remove-item-btn {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-item .remove-item-btn:hover {
+    background-color: #5a381f;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #9c6615;
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #5a381f;
+}
+
+.quantity-controls span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5a381f;
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.quantity-controls button {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #5a381f;
+}
+
+.quantity-controls span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5a381f;
+}
+/* Slideshow Section */
+#slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Increase max width */
+    height: 400px; /* Reduce height */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#slideshow .slide {
+    display: none;
+    text-align: center;
+    color: #5a381f;
+    position: absolute;
+    width: 100%; /* Ensures slides take up the full container width */
+    height: 100%; /* Ensures consistent height */
+    top: 0;
+    left: 0;
+}
+
+#slideshow .slide img {
+    width: 100%; /* Ensures image fits the container width */
+    height: 100%; /* Ensures image fits the container height */
+    object-fit: cover; /* Ensures the image scales proportionally to fit */
+    border-radius: 10px;
+}
+
+#slideshow .slide p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better readability */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Navigation Buttons */
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+
+/* Find Store Section */
+#find-store {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 2px solid #9c6615;
+    border-radius: 10px;
+    background-color: #fff5e6;
+}
+
+#find-store input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #9c6615;
+    border-radius: 5px;
+}
+
+#find-store button {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#find-store button:hover {
+    background-color: #5a381f;
+}
+
+/* Contact Us Section */
+#contact-us {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 2px solid #9c6615;
+    border-radius: 10px;
+    background-color: #fff5e6;
+}
+
+#contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #9c6615;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #5a381f;
+}
+
+
+/* About Us Page */
+#about, #mission, #values {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff5e6;
+    border: 2px solid #9c6615;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#values li {
+    text-align: left;
+    margin: 10px 0;
+}
+
+
+/* Checkout Section */
+#checkout-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-btn {
+    background-color: #9c6615;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: not-allowed; /* Initially disabled */
+    opacity: 0.6;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+#checkout-btn.enabled {
+    cursor: pointer;
+    opacity: 1;
+    background-color: #5a381f;
+}
+
+#checkout-btn:hover.enabled {
+    background-color: #7d5732;
+}
