@@ -1,3 +1,4 @@
+
 const menuData = [
     { category: "coffee", name: "Cappuccino", image: "images/image1.jpg", description: "Rich espresso topped with frothy steamed milk.", price: 1.99 },
     { category: "coffee", name: "Caffè Latte", image: "images/image2.jpg", description: "Smooth espresso combined with creamy steamed milk.", price: 2.49 },
@@ -9,7 +10,7 @@ const menuData = [
 
 let cart = [];
 
-// Render menu items
+// Render Menu Items
 const renderMenu = (category = "all") => {
     const menuContainer = document.getElementById("menu-container");
     menuContainer.innerHTML = ""; // Clear existing content
@@ -81,19 +82,6 @@ const addToCart = (name, price, quantity) => {
     renderCart();
 };
 
-// Update Quantity in Cart
-const updateQuantity = (name, action) => {
-    const item = cart.find(item => item.name === name);
-    if (item) {
-        if (action === "increase") {
-            item.quantity += 1;
-        } else if (action === "decrease") {
-            item.quantity = Math.max(1, item.quantity - 1); // Ensure quantity doesn't go below 1
-        }
-        renderCart();
-    }
-};
-
 // Render Cart
 const renderCart = () => {
     const cartContainer = document.getElementById("cart-container");
@@ -101,6 +89,7 @@ const renderCart = () => {
 
     if (cart.length === 0) {
         cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+        updateCheckoutButton();
         return;
     }
 
@@ -112,12 +101,8 @@ const renderCart = () => {
         cartItem.innerHTML = `
             <div class="cart-item-details">
                 <p>${item.name}</p>
-                <div class="quantity-controls">
-                    <button class="decrease-btn" data-name="${item.name}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="increase-btn" data-name="${item.name}">+</button>
-                </div>
-                <p>$${(item.price * item.quantity).toFixed(2)}</p>
+                <p>Qty: ${item.quantity}</p>
+                <p>Total: $${(item.price * item.quantity).toFixed(2)}</p>
             </div>
             <button class="remove-item-btn" data-name="${item.name}">Remove</button>
         `;
@@ -127,69 +112,49 @@ const renderCart = () => {
 
     const totalElement = document.createElement("p");
     totalElement.classList.add("total");
-    totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
+    totalElement.textContent = `Total: $${total.toFixed(2)}`;
     cartContainer.appendChild(totalElement);
 
-    document.querySelectorAll(".remove-item-btn").forEach(button => {
-        button.addEventListener("click", (event) => {
-            const name = event.target.getAttribute("data-name");
-            removeFromCart(name);
-        });
-    });
-
-    document.querySelectorAll(".increase-btn").forEach(button => {
-        button.addEventListener("click", (event) => {
-            const name = event.target.getAttribute("data-name");
-            updateQuantity(name, "increase");
-        });
-    });
-
-    document.querySelectorAll(".decrease-btn").forEach(button => {
-        button.addEventListener("click", (event) => {
-            const name = event.target.getAttribute("data-name");
-            updateQuantity(name, "decrease");
-        });
-    });
+    updateCheckoutButton();
 };
 
-// Remove from Cart
-const removeFromCart = (name) => {
-    cart = cart.filter(item => item.name !== name);
-    renderCart();
+// Enable/Disable Checkout Button
+const updateCheckoutButton = () => {
+    const checkoutButton = document.getElementById("checkout-btn");
+    if (cart.length > 0) {
+        checkoutButton.disabled = false;
+        checkoutButton.classList.add("enabled");
+    } else {
+        checkoutButton.disabled = true;
+        checkoutButton.classList.remove("enabled");
+    }
 };
 
-// Tab Click Handlers
-document.querySelectorAll(".menu-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-        const category = tab.getAttribute("data-category");
-        renderMenu(category);
-    });
+// Checkout Button Event
+// Checkout Button Event
+document.getElementById("checkout-btn").addEventListener("click", () => {
+    if (cart.length > 0) {
+        let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        alert(`Your cart total is $${total.toFixed(2)}. Please pay at the counter. Thanks for choosing us!`);
+    }
 });
 
 
+// Slideshow
 let currentSlide = 0;
-
-// Function to show a specific slide
 const showSlide = (index) => {
     const slides = document.querySelectorAll("#slideshow .slide");
     slides.forEach((slide, i) => {
         slide.style.display = i === index ? "block" : "none";
     });
 };
-
-// Change slide on button click
 const changeSlide = (direction) => {
     const slides = document.querySelectorAll("#slideshow .slide");
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
     showSlide(currentSlide);
 };
 
-// Initial Slideshow Render
-showSlide(currentSlide);
-
-// Other existing functionality (Menu and Cart Logic) here...
-
-
 // Initial Render
 renderMenu();
 renderCart();
+showSlide(currentSlide);
